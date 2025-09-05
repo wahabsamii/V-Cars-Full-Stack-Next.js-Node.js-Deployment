@@ -45,7 +45,7 @@ export default function page() {
     if (!confirm("Are you sure you want to delete this booking?")) return;
 
     try {
-      const res = await axios.delete(`http://localhost:5000/api/booking/delete/${id}`);
+      const res = await axios.delete(`https://v-cars-next-backend.vercel.app/api/booking/delete/${id}`);
       if (res.data) {
         toast.success(res.data.message || "Booking deleted successfully");
 
@@ -95,7 +95,7 @@ export default function page() {
                           onChange={async (e) => {
                             const newStatus = e.target.value;
                             try {
-                              const res = await axios.put(`http://localhost:5000/api/booking/status/${b._id}`, {
+                              const res = await axios.put(`https://v-cars-next-backend.vercel.app/api/booking/status/${b._id}`, {
                                 status: newStatus,
                               });
 
